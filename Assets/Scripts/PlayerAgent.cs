@@ -11,6 +11,7 @@ public class PlayerAgent : Agent
 {
     private PlayerController _playerController;
     private UnityEngine.InputSystem.PlayerInput _playerInput;
+    private List<int> _visitedPlatforms = new List<int>();
 
     public override void Initialize()
     {
@@ -47,5 +48,17 @@ public class PlayerAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         // some observation
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out UniqueID id))
+        {
+            if (!_visitedPlatforms.Contains(id.ID))
+            {
+                
+                _visitedPlatforms.Add(id.ID);
+            }
+        }
     }
 }
