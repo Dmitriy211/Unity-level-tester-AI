@@ -92,7 +92,8 @@ public class PlayerController : MonoBehaviour
             Vector3.down,
             out RaycastHit hit,
             0.02f + _characterController.skinWidth,
-            _groundMask
+            _groundMask,
+            QueryTriggerInteraction.Ignore
         );
     }
 

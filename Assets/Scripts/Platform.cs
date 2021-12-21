@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UniqueID : MonoBehaviour
+public class Platform : MonoBehaviour
 {
     public int ID;
 }
