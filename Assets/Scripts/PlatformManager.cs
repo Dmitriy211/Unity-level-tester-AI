@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlatformManager : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _platforms;
+    [SerializeField] private List<Transform> _platforms = new List<Transform>();
+
+    public List<Transform> Platforms => _platforms;
 
     public float GetDistanceToClosestPlatform(Vector3 position, List<int> visited)
     {
@@ -21,7 +24,7 @@ public class PlatformManager : MonoBehaviour
             if (platformSqrDist < minSqrDist)
                 minSqrDist = platformSqrDist;
         }
-        return Mathf.Sqrt(minSqrDist);
+        return minSqrDist > 9999 ? -1 : Mathf.Sqrt(minSqrDist);
     }
 
     public Vector3 GetDirectionToClosestPlatform(Vector3 position, List<int> visited)
@@ -42,6 +45,21 @@ public class PlatformManager : MonoBehaviour
             }
         }
 
-        return (closest.position - position).normalized;
+        return closest ? (closest.position - position).normalized : Vector3.zero;
+    }
+
+    public void AddPlatform(Transform platformTransform)
+    {
+        _platforms.Add(platformTransform);
+    }
+
+    public void Reset()
+    {
+        foreach (var p in _platforms.Where(platform => platform.GetComponentInChildren<Platform>().ID != -1))
+        {
+            Destroy(p.gameObject);
+        }
+        
+        _platforms = new List<Transform>();
     }
 }

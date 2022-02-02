@@ -2,15 +2,6 @@
     "PlayerBehaviour": {
         "checkpoints": [
             {
-                "steps": 184560,
-                "file_path": "results\\Player_01\\PlayerBehaviour\\PlayerBehaviour-184560.onnx",
-                "reward": 16.499998319149018,
-                "creation_time": 1640016469.1055734,
-                "auxillary_file_paths": [
-                    "results\\Player_01\\PlayerBehaviour\\PlayerBehaviour-184560.pt"
-                ]
-            },
-            {
                 "steps": 460560,
                 "file_path": "results\\Player_01\\PlayerBehaviour\\PlayerBehaviour-460560.onnx",
                 "reward": 20.499998700618743,
@@ -45,15 +36,24 @@
                 "auxillary_file_paths": [
                     "results\\Player_01\\PlayerBehaviour\\PlayerBehaviour-615840.pt"
                 ]
+            },
+            {
+                "steps": 963120,
+                "file_path": "results\\Player_01\\PlayerBehaviour\\PlayerBehaviour-963120.onnx",
+                "reward": null,
+                "creation_time": 1642480835.9374247,
+                "auxillary_file_paths": [
+                    "results\\Player_01\\PlayerBehaviour\\PlayerBehaviour-963120.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 615840,
+            "steps": 963120,
             "file_path": "results\\Player_01\\PlayerBehaviour.onnx",
             "reward": null,
-            "creation_time": 1640019101.220166,
+            "creation_time": 1642480835.9374247,
             "auxillary_file_paths": [
-                "results\\Player_01\\PlayerBehaviour\\PlayerBehaviour-615840.pt"
+                "results\\Player_01\\PlayerBehaviour\\PlayerBehaviour-963120.pt"
             ]
         }
     },

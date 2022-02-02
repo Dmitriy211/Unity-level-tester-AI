@@ -99,8 +99,10 @@ public class PlayerController : MonoBehaviour
 
     public void Reset()
     {
+        print("reset");
         _verticalVelocity = 0;
         transform.position = _resetTransform.position;
         transform.rotation = _resetTransform.rotation;
+        print(transform.position);
     }
 }
